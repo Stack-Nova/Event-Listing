@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
@@ -50,4 +51,4 @@ app.post("/submit", (req, res) => {
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
 });
-
+ 
