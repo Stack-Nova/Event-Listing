@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Submission Form</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="form-header">
+      <h1>🎉 Submit Your Event</h1>
+      <p>Promote your event to the college community!</p>
+    </div>
+
+    <form id="eventForm" method="post" action="/submit">
+      <div class="form-group">
+        <label for="title">Event Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter event name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="organizer">Organized By</label>
+        <input type="text" id="organizer" name="organizer" placeholder="Club / Department / Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Event Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Start Time</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Event Location</label>
+        <input type="text" id="location" name="location" placeholder="Auditorium, Seminar Hall, Online..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="link">Event Link (optional)</label>
+        <input type="url" id="link" name="link" placeholder="https://event-link.com">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Event Description</label>
+        <textarea id="description" rows="5" name="description" placeholder="Describe what your event is about..." required></textarea>
+      </div>
+
+      <button type="submit">Submit Event 🚀</button>
+    </form>
+  </div>
+
+  <!--Real-Time Preview -->
+  <div class="preview-container">
+    <h2>🔍 Live Event Preview</h2>
+    <div id="preview">
+      <h3 id="preview-title">Event Title</h3>
+      <p><strong>By:</strong> <span id="preview-organizer">Organizer</span></p>
+      <p><strong>Date:</strong> <span id="preview-date">YYYY-MM-DD</span></p>
+      <p><strong>Time:</strong> <span id="preview-time">--:--</span></p>
+      <p><strong>Location:</strong> <span id="preview-location">Location</span></p>
+      <p><strong>Link:</strong> <span id="preview-link">-</span></p>
+      <p><strong>Description:</strong><br><span id="preview-description">Event description will appear here.</span></p>
+    </div>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>
