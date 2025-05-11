@@ -10,13 +10,15 @@
 </head>
 <body>
 
+  <div id="cursor"></div>
+
   <div class="form-container">
     <div class="form-header">
       <h1>🎉 Submit Your Event</h1>
       <p>Promote your event to the college community!</p>
     </div>
 
-    <form id="eventForm" method="post" action="/submit" >
+    <form id="eventForm" method="post" action="/submit">
       <div class="form-group">
         <label for="title">Event Title</label>
         <input type="text" id="title" name="title" placeholder="Enter event name" required>
@@ -49,7 +51,7 @@
 
       <div class="form-group">
         <label for="description">Event Description</label>
-        <textarea id="description" rows="5" name="description" placeholder="Describe what your event is about..." required></textarea>
+        <textarea id="description" name="description" rows="5" placeholder="Describe what your event is about..." required></textarea>
       </div>
 
       <button type="submit">Submit Event 🚀</button>
@@ -69,6 +71,8 @@
       <p><strong>Description:</strong><br><span id="preview-description">Event description will appear here.</span></p>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/js/script.js"></script>
 </body>
 </html>

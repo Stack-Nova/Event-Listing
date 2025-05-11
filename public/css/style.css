@@ -1,7 +1,7 @@
 body {
-  font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(to right, #eeaeca, #94bbe9);
-  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  /* background: #0080ff; */
+  background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);    margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,13 +9,16 @@ body {
 }
 
 .form-container {
-  background-color: #ffffff51;
-  padding: 40px 50px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.29);
+  /* background: #ffffff; */
+    padding: 40px 50px;
   border-radius: 20px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 700px;
-  backdrop-filter: blur(10px);
 }
 
 .form-header {
@@ -84,17 +87,21 @@ button:hover {
   box-shadow: 0 8px 20px rgba(78, 84, 200, 0.3);
 }
 
+
+
 .preview-container {
-  background-color: #ffffff51;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.29);
+  /* background: #ffffff; */
   padding: 30px 40px;
   margin: 30px auto;
   border-radius: 20px;
   max-width: 700px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  backdrop-filter: blur(10px);
 }
 
 .preview-container h2 {
@@ -119,3 +126,32 @@ button:hover {
   color: #4e54c8;
   text-decoration: underline;
 }
+
+/* #cursor{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  position:fixed;
+  display: flex;
+} */
+
+
+
+
+#cursor {
+height: 20px;
+width: 20px;
+border-radius: 50%;
+background: linear-gradient(90deg,rgba(22, 153, 204, 1) 0%, rgba(87, 199, 111, 1) 100%, rgba(237, 221, 83, 1) 100%);
+opacity: 70%;
+/* background-color:"transparent"; */
+position: fixed;
+z-index: 9;
+font-size: 10px;
+display: flex;
+align-items: center;
+text-align: center;
+/* background-color: #00ffff4d; */
+}
+
