@@ -24,7 +24,7 @@
         <path d="M7 13l3 3 7-7" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     `,
-    background: 'rgba(78, 84, 200, 0.05)', // semi-transparent for glass effect (transparency can be controlled by changing 4th parameter of rgba).
+    background: 'rgba(78, 84, 200, 0.05)', // semi-transparent for glass effect
     showConfirmButton: true,
     confirmButtonColor: '#fff',
     confirmButtonText: '<span style="font-family:Poppins, sans-serif; font-weight:bold;">Okay</span>',
@@ -41,6 +41,7 @@
   });
 
 
+    
 
       this.reset();
       inputs.forEach(id => {
@@ -49,7 +50,13 @@
           id === "description" ? "Event description will appear here." :
           id === "time" ? "--:--" : "-";
       });
+
+      
+
+
     });
+
+
 
 
 
@@ -71,8 +78,10 @@
   // On hover over form-container
   formContainer.addEventListener("mouseenter",function(){
     cursor.innerHTML="HEY!"
+    cursor.style.fontSize="8px";
     gsap.to(cursor, {
-      scale: 4,
+      scale: 3,
+      rotate: 0,
       backgroundColor:"#00ffff4d",
       duration: 0.3,
       
@@ -84,67 +93,81 @@
     cursor.innerHTML=""
     gsap.to(cursor, {
       scale: 1,
+      rotate:0,
       backgroundColor: "transparent",
       duration: 0.3,
       
     });
   });
 
-// formContainer.addEventListener("mouseover", function(e) {
-//   if (!btn.contains(e.target)) {
-//     cursor.innerHTML = "HEY!";
-//     gsap.to(cursor, {
-//       scale: 4,
-//       backgroundColor: "transparent",
-//       duration: 0.3,
-//     });
-//   }
-// });
-
-
-  // On hover over Prev-container
-  prevcontainer.addEventListener("mouseenter",function(){
-    cursor.innerHTML="Check"
+if (prevcontainer) {
+  prevcontainer.addEventListener("mouseenter", () => {
+    cursor.innerHTML = "Check";
+    cursor.style.fontSize = "6px"; 
     gsap.to(cursor, {
-      scale: 4,
-      backgroundColor:"#00ffff4d",
+      scale: 2.5, 
+      rotate: 0,
+      backgroundColor: "#00ffff4d",
       duration: 0.3,
-      
     });
   });
+  
 
-  // On mouse leave from Prev-container
-  prevcontainer.addEventListener("mouseleave",function(){
-    cursor.innerHTML=""
+  prevcontainer.addEventListener("mouseleave", () => {
+    cursor.innerHTML = "";
     gsap.to(cursor, {
       scale: 1,
+      rotate: 0,
       backgroundColor: "transparent",
       duration: 0.3,
-      
     });
   });
+}
 
-    // On hover over Button
-  btn.addEventListener("mouseenter",function(e){
+
+// === Button Hover + Re-entry Fix ===
+if (btn) {
+  btn.addEventListener("mouseenter", (e) => {
     e.stopPropagation();
-    cursor.innerHTML="CLICK"
+    cursor.innerHTML = "CLICK";
+    cursor.style.fontSize = "8px"; 
     gsap.to(cursor, {
-      scale: 4,
-      backgroundColor:"#00ffff4d",
+      scale: 3.5, 
+      rotate: 5,
+      backgroundColor: "#00ffff4d",
       duration: 0.3,
-      
     });
   });
+  
 
-  // On mouse leave from Button
-  btn.addEventListener("mouseleave",function(){
-    cursor.innerHTML=""
-    gsap.to(cursor, {
-      scale: 1,
-      backgroundColor: "transparent",
-      duration: 0.3,
-      
-    });
+  btn.addEventListener("mouseleave", (e) => {
+    const elementUnderCursor = document.elementFromPoint(e.clientX, e.clientY);
+    if (formContainer && formContainer.contains(elementUnderCursor)) {
+      cursor.innerHTML = "HEY!";
+      cursor.style.fontSize = "8px"; 
+      gsap.to(cursor, {
+        scale: 3, 
+        rotate: 0,
+        backgroundColor: "#00ffff4d",
+        duration: 0.3,
+      });
+    }
+     else {
+      cursor.innerHTML = "";
+      gsap.to(cursor, {
+        scale: 1,
+        rotate: 0,
+        backgroundColor: "transparent",
+        duration: 0.3,
+      });
+    }
+    
+  
+
   });
 
-
+  particlesJS.load('particles-js', 'particlesjs-config.json', function () {
+      console.log('particles.js config loaded');
+    });
+  
+}
