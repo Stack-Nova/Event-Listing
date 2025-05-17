@@ -1,7 +1,7 @@
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
-const Listing=require("./models/listing.js")
+const Listing=require("./models/listing.js");
 const path=require("path");
 const port=8080;
 
@@ -24,8 +24,16 @@ main().then(()=>{
 
 //Home page
 app.get("/",(req,res)=>{
+    res.render("listing/index.ejs");
+});
+
+//form 
+app.get("/form",(req,res)=>{
     res.render("listing/start.ejs");
 });
+
+
+
 
 //POST request to submit form data
 app.post("/submit", (req, res) => {
@@ -40,7 +48,7 @@ app.post("/submit", (req, res) => {
     });
     listing.save().then(() => {
         console.log("Data saved!");
-        res.send("Data saved!");
+        res.redirect("/")
     }).catch((err) => {
         console.error("Error saving data:", err);
         res.status(500).send("Error saving data");

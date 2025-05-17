@@ -4,51 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Event Submission Form</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 </head>
 <body>
+  <div id="particles-js"></div>  
 
-  <div id="cursor"></div>
-
+  <div id="cursor">
+    
+  </div>
   <div class="form-container">
+    
+    
+    
     <div class="form-header">
-       <h1> <span id="h1-span">Submit Your Event</span>🎉 </h1>
+      <h1> <span id="h1-span">Submit Your Event</span>🎉 </h1>
+    
       <p>Promote your event to the college community!</p>
     </div>
 
-    <form id="eventForm" method="post" action="/submit">
+    <form id="eventForm" action="/submit" method="POST">
       <div class="form-group">
         <label for="title">Event Title</label>
-        <input type="text" id="title" name="title" placeholder="Enter event name" required>
+        <input type="text" name="title" id="title" placeholder="Enter event name" required>
       </div>
 
       <div class="form-group">
-        <label for="organizer">Organized By</label>
-        <input type="text" id="organizer" name="organizer" placeholder="Club / Department / Name" required>
+        <label for="organizer">Organized By</label>        <input type="text" name="organizer" id="organizer" placeholder="Club / Department / Name" required>
       </div>
 
       <div class="form-group">
         <label for="date">Event Date</label>
-        <input type="date" id="date" name="date" required>
+        <input type="date" name="date" id="date" required>
       </div>
 
       <div class="form-group">
         <label for="time">Start Time</label>
-        <input type="time" id="time" name="time" required>
+        <input type="time" name="time" id="time" required>
       </div>
 
       <div class="form-group">
         <label for="location">Event Location</label>
-        <input type="text" id="location" name="location" placeholder="Auditorium, Seminar Hall, Online..." required>
+        <input type="text" name="location" id="location" placeholder="Auditorium, Seminar Hall, Online..." required>
       </div>
 
       <div class="form-group">
         <label for="link">Event Link (optional)</label>
-        <input type="url" id="link" name="link" placeholder="https://event-link.com">
+        <input type="url" name="link" id="link" placeholder="https://event-link.com">
       </div>
 
       <div class="form-group">
@@ -56,7 +64,9 @@
         <textarea id="description" name="description" rows="5" placeholder="Describe what your event is about..." required></textarea>
       </div>
 
-      <button type="submit">Submit Event 🚀</button>
+      <button id="btn" type="submit">Submit Event 🚀</button>
+      
+      
     </form>
   </div>
 
@@ -74,7 +84,8 @@
     </div>
   </div>
 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="/js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
