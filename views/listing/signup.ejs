@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+               
+</div>  
+    </div>
+
+    <div class="login-container">
+        <div class="background"></div>
+        <div class="login-form">
+            <h2 class="login-id" >Sign-Up</h2>
+            <form method="post" action="/signup">
+                <label for="username">Name</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                 <% if (typeof error !== "undefined") { %>
+    <p style="color: red; font-weight: 700; margin-top: 15px;"><%= error %></p>
+<% } %>
+                <button type="submit">LOGIN</button>
+                <div class="links">
+                    <a href="#">Forgot password?</a>
+                    <a href="/login">Log In</a>
+                </div>
+            </form>
+        </div>
+        <div class="powered-text">
+            Powered by Stack-Nova(P) Ltd.
+        </div>
+    </div>
+</body>
+</html>

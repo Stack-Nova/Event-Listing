@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Events Calendar</title>
+    <link rel="stylesheet" href="css/stylecal.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-content">
+            <h1>Campus Events Calendar</h1>
+            <div class="nav-links">
+                <button id="view-month-btn">Month</button>
+                <button id="view-week-btn">Week</button>
+                <button id="view-year-btn">Year</button>
+                <button><a href="/login">Add an event</a></button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Clubs & Organizers</h2>
+            <select id="club-selector">
+                <option value="">Select a Club</option>
+            </select>
+            <div class="club-members">
+                <h3>Members</h3>
+                <ul id="members-list"></ul>
+            </div>
+        </div>
+
+        <div class="calendar-main">
+            <div class="calendar-header">
+                <button id="prev-period">&lt;</button>
+                <span id="period-label"></span>
+                <button id="next-period">&gt;</button>
+            </div>
+            <div class="calendar-weekdays" id="calendar-weekdays"></div>
+            <div class="calendar-days" id="calendar-days"></div>
+        </div>
+
+        <div class="rightbar">
+            <div class="right-upper">
+                <h2>Completed Events</h2>
+                <select id="completed-events-dropdown">
+                    <option value="">Select Event</option>
+                </select>
+                <div id="completed-event-details"></div>
+                <div class="right-download">
+                    <button id="download-btn" class="download-mini">Download Report</button>
+                </div>
+            </div>
+            <div class="right-lower">
+                <h2>Upcoming Events</h2>
+                <ul id="upcoming-events-list"></ul>
+            </div>
+            <div class="right-selected">
+                <h2>Events on Selected Day</h2>
+                <div id="event-list">
+                    Select a date to see events.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="download-dialog" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Select Report Type</h2>
+            <button class="download-mode">Monthly Report</button>
+            <button class="download-mode">Yearly Report</button>
+            <button class="download-mode">Custom Report</button>
+            <button class="download-mode">Event-wise Report</button>
+            <button class="download-mode" onclick="closeDialog()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="js/scriptcal.js"></script>
+</body>
+</html>
