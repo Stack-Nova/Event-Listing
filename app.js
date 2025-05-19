@@ -76,7 +76,7 @@ app.post("/signup", async (req, res) => {
     const found = await permission.findOne({ email: email });
     if (found) {
       const newUser = new User({ username, email, password });
-      await newUser.save(); // Save plain text password
+      await newUser.save();
       res.redirect("/login");
     } else {
       return res.status(403).render("listing/signup.ejs", {
